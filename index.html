@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenya Fintech Compliance Audit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">
+            <span class="icon">⚖️</span>
+            <div>
+                <h1>CREATIVES SOFTWARE <span class="accent">Fintech-AUDITING PLATFORM</span></h1>
+                <small>Kenyan DPA Compliance Regulatory Audit Tool(beta)</small>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <span id="nav-step">Dashboard</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- SCREEN 1: LANDING -->
+        <section id="landing-screen" class="active-screen">
+            <div class="hero-content">
+                <h2>Regulatory Health Check</h2>
+                <p>A professional self-assessment tool mapped to:</p>
+                <ul class="reg-list">
+                    <li>CBK Digital Credit Providers Regulations 2022</li>
+                    <li>Data Protection Act (2019) & ODPC Guidance</li>
+                    <li>CBK Cybersecurity Guidelines</li>
+                </ul>
+                
+                <div class="info-banner">
+                    <p><strong>Disclaimer:</strong> This tool is for internal auditing purposes. Results do not constitute legal advice.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="num">45</span>
+                        <span class="lbl">Compliance Checks</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="num">7</span>
+                        <span class="lbl">Regulatory Areas</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="num">100%</span>
+                        <span class="lbl">Confidential</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-lg" onclick="startAudit()">Begin Compliance Audit</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 2: THE FORM -->
+        <section id="audit-form-screen" class="hidden-screen">
+            <div class="progress-area">
+                <div class="progress-text">
+                    <span id="section-title-display">Section 1</span>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <form id="audit-form" onsubmit="return false;">
+                <div id="questions-container">
+                    <!-- Questions injected via JS -->
+                </div>
+            </form>
+
+            <div class="form-controls">
+                <button class="btn btn-secondary" id="prev-btn" onclick="prevSection()" disabled>Previous</button>
+                <button class="btn btn-primary" id="next-btn" onclick="nextSection()">Next Section</button>
+                <button class="btn btn-success hidden-btn" id="finish-btn" onclick="submitAudit()">Generate Report</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 LexComply Audit Systems | <a href="#">Privacy</a></p>
+    </footer>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

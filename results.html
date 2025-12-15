@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Audit Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="report-body">
+
+    <div class="report-container">
+        <!-- HEADER -->
+        <header class="report-header">
+            <div class="header-left">
+                <h2>CONFIDENTIAL AUDIT REPORT</h2>
+                <p id="timestamp">Generated on: ...</p>
+                <p id="company-name">Entity: ...</p>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-secondary" onclick="window.print()">🖨️ Print to PDF</button>
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">New Audit</button>
+            </div>
+        </header>
+
+        <!-- SUMMARY DASHBOARD -->
+        <section class="score-dashboard">
+            <div class="score-card">
+                <h3>Overall Compliance Score</h3>
+                <div class="pie-wrapper" id="score-pie">
+                    <span class="score-text" id="final-score">0%</span>
+                </div>
+                <div class="risk-badge" id="risk-badge">CALCULATING...</div>
+            </div>
+            
+            <div class="summary-text">
+                <h3>Executive Summary</h3>
+                <p id="executive-summary">Loading analysis...</p>
+            </div>
+        </section>
+
+        <!-- CRITICAL ALERTS -->
+        <section id="critical-section" class="report-section critical-hidden">
+            <div class="alert-banner">
+                <h3>🚨 REGULATORY RED FLAGS DETECTED</h3>
+                <p>The following failures are critical breaches of CBK or ODPC regulations and may attract fines or license revocation.</p>
+            </div>
+            <table class="audit-table">
+                <thead>
+                    <tr>
+                        <th>Critical Question</th>
+                        <th>Legal Implication</th>
+                    </tr>
+                </thead>
+                <tbody id="critical-table-body">
+                    <!-- Injected JS -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- DETAILED GAPS -->
+        <section class="report-section">
+            <h3>Gap Analysis & Remediation</h3>
+            <p>Below are areas where controls were missing or partial.</p>
+            <div id="gap-cards-container">
+                <!-- Cards injected JS -->
+            </div>
+        </section>
+
+        <!-- DISCLAIMER FOOTER -->
+        <div class="report-footer">
+            <p>This report is generated automatically based on user inputs. It does not constitute a legal opinion. For full compliance verification, please consult a specialized Fintech Legal Practitioner.</p>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="results.js"></script>
+</body>
+</html>
